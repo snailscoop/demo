@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SNAILS - Decentralized Video Platform" />
+    <title>SNAILS - Decentralized Video Platform</title>
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/src/main.tsx" as="script" />
+    <!-- Add CSP for security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; connect-src 'self' ws://localhost:8765/gun wss://*; img-src 'self' data: blob:; media-src 'self' blob:;" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <!-- Add error boundary initialization -->
+    <script>
+      window.onerror = function(msg, url, line, col, error) {
+        console.error('Global error:', { msg, url, line, col, error });
+        return false;
+      };
+    </script>
+  </body>
+</html>
